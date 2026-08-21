@@ -223,11 +223,10 @@ def validate(
                 "likeness",
                 "identity",
                 "face structure",
-                "cut-out",
-                "collage",
+                "full illustration",
             ),
         ):
-            errors.append("avatar workflow must keep likeness / cut-out portrait")
+            errors.append("avatar workflow must keep likeness as a full illustration")
 
     item = sections.get("item", "")
     if not item.strip():
@@ -272,12 +271,17 @@ def validate(
         errors.append("style recipe must state a simplified geometric face")
     if "isolated" not in style_haystack:
         errors.append("style recipe must isolate the subject")
-    if not _has_any(corpus, ("cut-out", "cut out", "collage")):
+    if not _has_any(
+        corpus,
+        ("bold black", "black outline", "thick outline", "cel fill", "flat cel"),
+    ):
         errors.append(
-            "style recipe must state photographic-collage / cut-out portrait quality"
+            "style recipe must state bold black outlines / flat cel fills"
         )
+    if not _has_any(corpus, ("wallpaper", "damask")):
+        errors.append("style recipe must state damask/floral wallpaper for avatars")
     if re.search(r"rusty lake style", style_haystack) and not (
-        "low-fi" in style_haystack or "collage" in style_haystack
+        "low-fi" in style_haystack or "outline" in style_haystack
     ):
         errors.append(
             "style recipe is only a 'Rusty Lake style' synonym with no visual constraints"

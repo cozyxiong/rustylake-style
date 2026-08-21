@@ -102,7 +102,7 @@ class TestShippedValidator(unittest.TestCase):
             "references/style.md": (
                 "flat low-fi muted desaturated greys ochre pale earth "
                 "sickly green doll-like simplified geometric face isolated "
-                "photographic-collage cut-out"
+                "bold black outlines flat cel fills damask wallpaper"
             )
         }
         errors = check_skill.validate(_ok_frontmatter(), body, refs)
@@ -113,13 +113,13 @@ class TestShippedValidator(unittest.TestCase):
             "## Avatar\n"
             "If no photo, ask for an upload and stop; do not invent a face. "
             "Restyle the likeness with image-edit / image-to-image. "
-            "Keep identity; photographic-collage / cut-out portrait.\n"
+            "Keep identity as a full illustration.\n"
         )
         refs = {
             "references/style.md": (
                 "flat low-fi muted desaturated greys ochre pale earth "
                 "sickly green doll-like simplified geometric face isolated "
-                "photographic-collage cut-out"
+                "bold black outlines flat cel fills damask wallpaper"
             )
         }
         errors = check_skill.validate(_ok_frontmatter(), body, refs)
@@ -144,7 +144,7 @@ class TestShippedValidator(unittest.TestCase):
         body = (
             "## Avatar\n"
             "If no photo, ask for an upload and stop. "
-            "Use image-edit on the likeness. Keep identity; cut-out collage.\n"
+            "Use image-edit on the likeness. Keep identity as a full illustration.\n"
             "## Item\n"
             "Use image-edit. Isolated inventory object on a plain pale ground. "
             "Head-and-shoulders bust likeness.\n"
@@ -153,7 +153,7 @@ class TestShippedValidator(unittest.TestCase):
             "references/style.md": (
                 "flat low-fi muted desaturated greys ochre pale earth "
                 "sickly green doll-like simplified geometric face isolated "
-                "photographic-collage cut-out"
+                "bold black outlines flat cel fills damask wallpaper"
             )
         }
         errors = check_skill.validate(_ok_frontmatter(), body, refs)

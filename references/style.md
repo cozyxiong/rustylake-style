@@ -2,34 +2,47 @@
 
 This file is the only style source. Copy the constraints into every image-edit prompt. Do not replace them with a synonym of "Rusty Lake style".
 
+The 锈湖头像 look is a **full illustration**: bold black outlines and flat cel fills. It is not a photograph with a filter, and not a photoreal face pasted onto a cartoon body.
+
 ## Shared look
 
-Flat low-fi illustration with limited shading — graphic, slightly crude, analog-game stills, not painterly oil and not 3D render.
+Bold even-weight **black outlines** around every shape (face, hair, clothes, props). Flat low-fi illustration with limited shading — two or three cel-fill values max. Graphic, slightly crude analog-game stills. Not painterly oil, not 3D, not photoreal.
 
-Muted desaturated palette: dusty greys, ochre, mustard, pale earth, rust brown, cream, dirty white, sickly olive/grey-green. No neon, no saturated pop, no glossy photoreal.
+Muted desaturated palette: dusty greys, ochre, mustard, pale earth, rust brown, cream, dirty white, sickly olive / grey-green. Wallpaper and walls carry the olive-grey. Skin (when a figure is present) is porcelain pale, almost grey-white. No neon, no saturated pop, no glossy photoreal.
 
-Uncanny doll-like stillness. Figures and objects sit as if cut and placed; they do not emote, blur, or pose cinematically.
+Uncanny doll-like stillness. Deadpan. Figures and objects sit as if drawn and placed; they do not smile, blur, or pose cinematically.
 
-Isolated subject. One person or one object owns the frame. Sparse negative space. No crowd, no busy tableau, no cinematic still life.
+Isolated subject. One person or one object owns the frame. No crowd, no busy tableau, no cinematic landscape.
 
-Photographic-collage / cut-out quality: a photo-like fragment (face, fabric, wood grain, rust, paper) composited onto illustrated geometry. Edges feel scissored, not airbrushed.
+## Face (avatars)
+
+Simplified geometric face:
+
+- large almond/oval eyes, half-lidded, staring; irises grey, pale, or slightly mismatched
+- nose as a short angular line or tiny triangle, not a rendered nose
+- small closed mouth, flat or a slight frown
+- hair as a solid graphic mass with a thick outline and a few internal strand lines; bangs as shapes
+
+Front-facing bust, head-and-shoulders, stiff posture. Background is a repeating **damask or floral wallpaper** in muted olive / grey-green. At most one quiet analog prop (rotary phone, side table). Not a sunset, beach, mountain, or fashion-illustration postcard.
 
 ## Prompt atoms (use these words)
 
 When writing the image-edit prompt, include this block (adapt only the subject clause):
 
-> Restyle into a Cube Escape / Rusty Lake still: flat low-fi illustration with limited shading; muted desaturated palette of greys, ochre, pale earth, and sickly green; uncanny doll-like stillness; isolated subject; photographic-collage / cut-out quality — a photo-like fragment on illustrated geometry. Analog puzzle-game frame, dusty and quiet.
+> Restyle into a Cube Escape / Rusty Lake still: full flat illustration with bold black outlines and limited shading; muted desaturated palette of greys, ochre, pale earth, and sickly green; porcelain-pale skin; uncanny doll-like stillness; isolated subject. Analog puzzle-game frame. Not photoreal, not a photo-face collage.
 
-Keep the upload's identity (the actual face, hair, skin, or the actual object). Change medium and atmosphere, not who or what it is.
+Keep the upload's identity (the actual hair, clothes, marks, or the actual object). Change medium and atmosphere, not who or what it is.
+
+If the user also attached **style examples**, pass them as extra image-edit references. The upload is identity; the examples are look only. Do not copy an example person's face.
 
 ## Avatar prompt
 
 Use with image-edit / image-to-image when a portrait photo is the source. Paste, then fill only the identity clause from the upload:
 
-> Restyle this portrait into a Cube Escape / Rusty Lake 头像. Keep this person's likeness — same face structure, age presentation, hair, and skin tone. Isolated bust, head-and-shoulders, facing the viewer. Photographic-collage / cut-out portrait: a photo-like facial fragment composited onto an illustrated body and a sparse room fragment. Uncanny doll-like stillness; simplified geometric face (large still eyes, small mouth, stiff posture). Flat low-fi illustration with limited shading. Muted desaturated palette of dusty greys, ochre, pale earth, and sickly green. Quiet analog puzzle-game still. Square-friendly framing, one subject, no crowd.
+> Restyle this portrait into a Cube Escape / Rusty Lake 头像 — a full illustration, not a photograph and not a photo face on a cartoon body. Keep this person's likeness: same hair, age presentation, clothes, and distinguishing marks, translated into graphic shapes. Isolated bust, head-and-shoulders, facing the viewer, stiff. Simplified geometric face: large half-lidded staring eyes, short line nose, small closed mouth, porcelain-pale skin. Hair as a solid outlined mass with simple internal strands. Bold even black outlines, flat cel fills, limited shading. Repeating damask or floral wallpaper in muted olive/grey-green. Uncanny doll-like stillness. Muted desaturated palette of dusty greys, ochre, pale earth, and sickly green. Square-friendly framing, one subject, no crowd, no cinematic landscape.
 
 ## Item prompt
 
 Use with image-edit / image-to-image when an object photo is the source. This is an inventory piece, not a portrait. Paste, then name the object from the upload:
 
-> Restyle this object into a Cube Escape / Rusty Lake 物品 — one isolated symbolic puzzle-inventory item. Keep the object recognizable. Center it on a plain pale ground (cream, dirty white, or dusty grey), as if sitting in an analog adventure-game inventory slot. Flat low-fi illustration with limited shading and a photographic-collage texture (wood grain, rust, paper, metal as cut-out fragments on illustrated geometry). Muted desaturated palette of greys, ochre, pale earth, and sickly green. Uncanny doll-like stillness: a quiet, placed object, not a cinematic product shot or a busy still life. No extra props, no room scene, no figure.
+> Restyle this object into a Cube Escape / Rusty Lake 物品 — one isolated symbolic puzzle-inventory item, drawn the same way as the portraits: bold black outlines, flat cel fills, limited shading. Keep the object recognizable. Center it on a plain pale ground (cream, dirty white, or dusty grey), as if sitting in an analog adventure-game inventory slot. Muted desaturated palette of greys, ochre, pale earth, and sickly green. Uncanny doll-like stillness: a quiet, placed object, not a cinematic product shot or a busy still life. No extra props, no room scene, no figure.
