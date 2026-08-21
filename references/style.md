@@ -21,3 +21,9 @@ When writing the image-edit prompt, include this block (adapt only the subject c
 > Restyle into a Cube Escape / Rusty Lake still: flat low-fi illustration with limited shading; muted desaturated palette of greys, ochre, pale earth, and sickly green; uncanny doll-like stillness; isolated subject; photographic-collage / cut-out quality — a photo-like fragment on illustrated geometry. Analog puzzle-game frame, dusty and quiet.
 
 Keep the upload's identity (the actual face, hair, skin, or the actual object). Change medium and atmosphere, not who or what it is.
+
+## Avatar prompt
+
+Use with image-edit / image-to-image when a portrait photo is the source. Paste, then fill only the identity clause from the upload:
+
+> Restyle this portrait into a Cube Escape / Rusty Lake 头像. Keep this person's likeness — same face structure, age presentation, hair, and skin tone. Isolated bust, head-and-shoulders, facing the viewer. Photographic-collage / cut-out portrait: a photo-like facial fragment composited onto an illustrated body and a sparse room fragment. Uncanny doll-like stillness; simplified geometric face (large still eyes, small mouth, stiff posture). Flat low-fi illustration with limited shading. Muted desaturated palette of dusty greys, ochre, pale earth, and sickly green. Quiet analog puzzle-game still. Square-friendly framing, one subject, no crowd.

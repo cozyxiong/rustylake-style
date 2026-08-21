@@ -28,3 +28,13 @@ When a photo is present, restyle it with the host **image-edit / image-to-image*
 | Face, selfie, portrait, 头像, avatar | Avatar |
 | Object, prop, 物品, item, inventory | Item |
 | Unclear | Ask which they want |
+
+## Avatar
+
+Follow this path when the upload is a portrait, selfie, face, 头像, or avatar.
+
+1. If no portrait image is attached, ask for an upload. Stop. Do not invent a face.
+2. Restyle **that** likeness with the host **image-edit / image-to-image** tool. Pass the user photo as the source. Do not use text-to-image for a likeness.
+3. Keep identity: age presentation, face structure, hair, skin tone, distinguishing marks. Change medium, not person.
+4. Use the **avatar prompt** in [`references/style.md`](references/style.md) (it already includes the shared look). Isolated bust or head-and-shoulders; photographic-collage / cut-out portrait — photo-like facial fragment on an illustrated body/room; uncanny doll-like stillness and a simplified geometric face.
+5. If the result drifted (wrong person, neon/photoreal, busy cinematic scene), edit again from the **original upload**, not from the failed output.
