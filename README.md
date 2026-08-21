@@ -1,29 +1,31 @@
 # rustylake-style
 
-An [Agent Skill](https://agentskills.io/) that restyles a **user-uploaded** portrait or object into Cube Escape / Rusty Lake (锈湖) illustration: 头像/avatars and 物品/items.
+**语言 / Language:** 中文 | [English](README_EN.md)
 
-Give this repo to your Agent so it can download the skill:
+将用户**上传**的肖像或物品，重绘成 Cube Escape / Rusty Lake（锈湖）插画风格的 Agent Skill：头像 / avatars 与 物品 / items。
+
+把这个仓库地址交给你的 Agent，即可下载并安装此 skill：
 
 ```
 https://github.com/cozyxiong/rustylake-style.git
 ```
 
-Or install with the skills CLI:
+或使用 skills CLI 安装：
 
 ```
 npx skills add cozyxiong/rustylake-style
 ```
 
-`SKILL.md` sits at the repository root so Agent Skills scanners and `npx skills` discover it.
+`SKILL.md` 位于仓库根目录，Agent Skills 扫描器与 `npx skills` 都能发现它。
 
-## Use
+## 使用
 
-1. Install the skill (URL above, or `npx skills add`).
-2. Upload a photo of a person (头像/avatar) or an object (物品/item).
-3. Ask the Agent for a Rusty Lake / 锈湖 restyle.
+1. 安装 skill（上面的仓库地址，或 `npx skills add`）。
+2. 上传一张人物照片（头像 / avatar）或物品照片（物品 / item）。
+3. 请 Agent 做成 Rusty Lake / 锈湖风格。
 
-The Agent must restyle the upload with image-edit / image-to-image. It should not invent a face when no photo is attached.
+Agent 必须用 image-edit / image-to-image 基于你上传的照片重绘；没有照片时不应凭空捏造面孔。
 
-## License
+## 许可
 
-MIT. See [LICENSE](LICENSE). This skill produces original images *in the style of* Cube Escape / Rusty Lake. It does not copy official sprites or portraits.
+MIT。见 [LICENSE](LICENSE)。本 skill 生成的是**原创**的「锈湖风格」图像，不复制官方立绘或精灵图。
