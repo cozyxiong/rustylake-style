@@ -38,3 +38,13 @@ Follow this path when the upload is a portrait, selfie, face, 头像, or avatar.
 3. Keep identity: age presentation, face structure, hair, skin tone, distinguishing marks. Change medium, not person.
 4. Use the **avatar prompt** in [`references/style.md`](references/style.md) (it already includes the shared look). Isolated bust or head-and-shoulders; photographic-collage / cut-out portrait — photo-like facial fragment on an illustrated body/room; uncanny doll-like stillness and a simplified geometric face.
 5. If the result drifted (wrong person, neon/photoreal, busy cinematic scene), edit again from the **original upload**, not from the failed output.
+
+## Item
+
+Follow this path when the upload is an object, prop, 物品, item, or inventory piece.
+
+1. If no object image is attached, ask for an upload. Stop. Do not invent the object.
+2. Restyle **that** object with the host **image-edit / image-to-image** tool. Pass the user photo as the source.
+3. Keep the object recognizable (shape, function, distinctive details). Change medium, not what it is.
+4. Use the **item prompt** in [`references/style.md`](references/style.md). Present it as one isolated symbolic puzzle-inventory piece on a plain/pale ground — not a portrait, not a busy cinematic still life.
+5. If the result became a scene of many objects, a product photo, or photoreal/neon, edit again from the **original upload**.

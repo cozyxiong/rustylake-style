@@ -27,3 +27,9 @@ Keep the upload's identity (the actual face, hair, skin, or the actual object). 
 Use with image-edit / image-to-image when a portrait photo is the source. Paste, then fill only the identity clause from the upload:
 
 > Restyle this portrait into a Cube Escape / Rusty Lake 头像. Keep this person's likeness — same face structure, age presentation, hair, and skin tone. Isolated bust, head-and-shoulders, facing the viewer. Photographic-collage / cut-out portrait: a photo-like facial fragment composited onto an illustrated body and a sparse room fragment. Uncanny doll-like stillness; simplified geometric face (large still eyes, small mouth, stiff posture). Flat low-fi illustration with limited shading. Muted desaturated palette of dusty greys, ochre, pale earth, and sickly green. Quiet analog puzzle-game still. Square-friendly framing, one subject, no crowd.
+
+## Item prompt
+
+Use with image-edit / image-to-image when an object photo is the source. This is an inventory piece, not a portrait. Paste, then name the object from the upload:
+
+> Restyle this object into a Cube Escape / Rusty Lake 物品 — one isolated symbolic puzzle-inventory item. Keep the object recognizable. Center it on a plain pale ground (cream, dirty white, or dusty grey), as if sitting in an analog adventure-game inventory slot. Flat low-fi illustration with limited shading and a photographic-collage texture (wood grain, rust, paper, metal as cut-out fragments on illustrated geometry). Muted desaturated palette of greys, ochre, pale earth, and sickly green. Uncanny doll-like stillness: a quiet, placed object, not a cinematic product shot or a busy still life. No extra props, no room scene, no figure.
