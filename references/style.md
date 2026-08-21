@@ -8,7 +8,7 @@ The 锈湖头像 look is a **full illustration**: bold black outlines and flat c
 
 Bold even-weight **black outlines** around every shape (face, hair, clothes, props). Flat low-fi illustration with limited shading — two or three cel-fill values max. Graphic, slightly crude analog-game stills. Not painterly oil, not 3D, not photoreal.
 
-Muted desaturated palette: dusty greys, ochre, mustard, pale earth, rust brown, cream, dirty white, sickly olive / grey-green. Wallpaper and walls carry the olive-grey. Skin (when a figure is present) is porcelain pale, almost grey-white. No neon, no saturated pop, no glossy photoreal.
+Muted desaturated palette: dusty greys, ochre, mustard, pale earth, rust brown, cream, dirty white, sickly olive / grey-green. Wallpaper and walls carry the olive-grey. Skin is pale ivory / light peach — readable as skin, with a hint of pink. It is not grey-green, not olive, not corpse-green; do not tint the face with the wallpaper. No neon, no saturated pop, no glossy photoreal.
 
 Uncanny doll-like stillness. Deadpan. Figures and objects sit as if drawn and placed; they do not smile, blur, or pose cinematically.
 
@@ -29,7 +29,7 @@ Front-facing bust, head-and-shoulders, stiff posture. Background is a repeating 
 
 When writing the image-edit prompt, include this block (adapt only the subject clause):
 
-> Restyle into a Cube Escape / Rusty Lake still: full flat illustration with bold black outlines and limited shading; muted desaturated palette of greys, ochre, pale earth, and sickly green; porcelain-pale skin; uncanny doll-like stillness; isolated subject. Analog puzzle-game frame. Not photoreal, not a photo-face collage.
+> Restyle into a Cube Escape / Rusty Lake still: full flat illustration with bold black outlines and limited shading; muted desaturated palette of greys, ochre, pale earth, and sickly green on wallpaper and props; pale ivory / light-peach skin (not grey-green); uncanny doll-like stillness; isolated subject. Analog puzzle-game frame. Not photoreal, not a photo-face collage.
 
 Keep the upload's identity (the actual hair, clothes, marks, or the actual object). Change medium and atmosphere, not who or what it is.
 
@@ -39,7 +39,7 @@ If the user also attached **style examples**, pass them as extra image-edit refe
 
 Use with image-edit / image-to-image when a portrait photo is the source. Paste, then fill only the identity clause from the upload:
 
-> Restyle this portrait into a Cube Escape / Rusty Lake 头像 — a full illustration, not a photograph and not a photo face on a cartoon body. Keep this person's likeness: same hair, age presentation, clothes, and distinguishing marks, translated into graphic shapes. Isolated bust, head-and-shoulders, facing the viewer, stiff. Simplified geometric face: large half-lidded staring eyes, short line nose, small closed mouth, porcelain-pale skin. Hair as a solid outlined mass with simple internal strands. Bold even black outlines, flat cel fills, limited shading. Repeating damask or floral wallpaper in muted olive/grey-green. Uncanny doll-like stillness. Muted desaturated palette of dusty greys, ochre, pale earth, and sickly green. Square-friendly framing, one subject, no crowd, no cinematic landscape.
+> Restyle this portrait into a Cube Escape / Rusty Lake 头像 — a full illustration, not a photograph and not a photo face on a cartoon body. Keep this person's likeness: same hair, age presentation, clothes, and distinguishing marks, translated into graphic shapes. Isolated bust, head-and-shoulders, facing the viewer, stiff. Simplified geometric face: large half-lidded staring eyes, short line nose, small closed mouth. Skin is pale ivory / light peach with a hint of pink — not grey, not olive, not green; do not stain the face with the wallpaper. Hair as a solid outlined mass with simple internal strands. Bold even black outlines, flat cel fills, limited shading. Repeating damask or floral wallpaper in muted olive/grey-green. Uncanny doll-like stillness. Muted desaturated palette of dusty greys, ochre, pale earth, and sickly green on the room only. Square-friendly framing, one subject, no crowd, no cinematic landscape.
 
 ## Item prompt
 
