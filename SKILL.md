@@ -13,7 +13,7 @@ Restyle a **user-uploaded** photo into Cube Escape / Rusty Lake illustration. Do
 
 ## Load the look
 
-Read [`references/style.md`](references/style.md) before writing any prompt. That file is the only style source. Put its look into every image-edit prompt; do not substitute a vague "Rusty Lake style" line. For avatars, also pass [`references/avatar-look.jpg`](references/avatar-look.jpg) as an extra image-edit **look** reference (how to draw brows, eyes, lips, outlines, wallpaper). The user photo is identity.
+Read [`references/style.md`](references/style.md) before writing any prompt. That file is the only style source. Put its look into every image-edit prompt; do not substitute a vague "Rusty Lake style" line. For avatars, pass both look plates as extra image-edit **look** references: [`references/avatar-look.jpg`](references/avatar-look.jpg) and [`references/avatar-look-b.jpg`](references/avatar-look-b.jpg). They show the same brows/eyes/lips on two different people. The user photo is identity.
 
 ## Require an upload
 
@@ -34,11 +34,10 @@ When a photo is present, restyle it with the host **image-edit / image-to-image*
 Follow this path when the upload is a portrait, selfie, face, 头像, or avatar.
 
 1. If no portrait image is attached, ask for an upload. Stop. Do not invent a face.
-2. Restyle **that** likeness with the host **image-edit / image-to-image** tool. Pass the user photo as the source. Do not use text-to-image for a likeness.
-3. Keep identity from the **upload**: face shape, hair (cut, length, bangs, color), clothes. **Face marks follow the upload only:** list moles, lip piercings, earrings, scars, glasses, tattoos and their positions from the photo, then keep them. If the photo has none, draw none.
-4. Use the **avatar prompt** in [`references/style.md`](references/style.md). Pass the upload first, then `references/avatar-look.jpg` as the look plate. Match that plate's brows, eyes, and lips (thin arched brows, half-lidded almond eyes with simple upper lashes, small peach-pink closed mouth). Do not copy the look plate's mole, lip piercing, jewelry, or face shape.
-5. If the user also attached more style examples, they are look only. The upload is identity.
-6. If the result drifted (wrong person, leftover photoreal face, marks copied from the look plate, upload marks dropped, neon, busy cinematic scene), edit again from the **original upload**, not from the failed output.
+2. Fill the **identity inventory** in [`references/style.md`](references/style.md) from the upload (face shape, hair, clothes + fabric, marks or `none`). This is what makes the first call land.
+3. Make **one** image-edit / image-to-image call. Order: upload, `references/avatar-look.jpg`, `references/avatar-look-b.jpg`. Do not fire extra variants to pick a winner.
+4. Paste the **one-shot avatar prompt** from `references/style.md` with the inventory slots filled. Look plates = brows, eyes, lips, outlines, wallpaper, skin tone. Upload = face shape, hair, clothes, moles, lip piercings, earrings. Never copy look-plate clothes, hair, flower, mole, piercing, or rotary phone unless they are on the upload.
+5. Only call image-edit again if the user asks, or if the first result is catastrophic (photoreal face, or look-plate identity leaked). Retry from the **original upload**, not from the failed output.
 
 ## Item
 

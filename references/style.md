@@ -16,38 +16,49 @@ Isolated subject. One person or one object owns the frame. No crowd, no busy tab
 
 ## Face (avatars)
 
-Canonical look plate: `references/avatar-look.jpg`. Always pass it as an extra image-edit reference for **how to draw** brows, eyes, and lips. It is not the identity.
+Look plates (drawing language only — two different people, same hand):
 
-Simplified geometric face, drawn like that plate:
+- `references/avatar-look.jpg`
+- `references/avatar-look-b.jpg`
 
-Match that plate's drawing language:
+Always pass **both** as extra image-edit references so the model sees that hair, clothes, and marks change while brows/eyes/lips stay the same. They are not the identity.
+
+Simplified geometric face, drawn like those plates:
 
 - eyebrows: thin simple arches, a few short strokes
 - eyes: large almond, half-lidded, a row of simple upper lashes, pale grey-green iris
 - nose: a short angular line
 - lips: small closed peach-pink mouth, two simple shapes
-- hair *rendering*: solid outlined mass with parallel internal strand lines — but cut, length, bangs, and color come from the upload
+- hair *rendering*: solid outlined mass with parallel internal strand lines — cut, length, bangs, and color come from the upload
+- clothes *rendering*: graphic outlined garment with fabric named from the upload (lace stays lace, knit stays knit)
 - face *shape*, moles, lip piercings, earrings, and other marks come from the upload
 
-Face marks (moles, beauty marks, lip piercings, earrings, scars, glasses, tattoos) come **only from the upload**. Before prompting, list them and their positions from the photo. Keep those. If the upload has none, draw none. Do not copy the look plate's mole, lip piercing, glasses, or jewelry.
+Front-facing bust, head-and-shoulders, stiff posture. Background is a repeating **damask or floral wallpaper** in muted olive / grey-green. Do not copy a look plate's rotary phone or side table unless the upload has a similar prop. Not a sunset, beach, mountain, cherry blossom, or fashion-illustration postcard.
 
-Front-facing bust, head-and-shoulders, stiff posture. Background is a repeating **damask or floral wallpaper** in muted olive / grey-green. At most one quiet analog prop (rotary phone, side table). Not a sunset, beach, mountain, or fashion-illustration postcard.
+## Identity inventory (fill this before the one image-edit call)
 
-## Prompt atoms (use these words)
+Write these lines from the **upload**, then paste them into the prompt. Do not skip.
 
-When writing the image-edit prompt, include this block (adapt only the subject clause):
+- face shape:
+- hair: color, length, bangs, up/down, accessories (flower, clip, …)
+- clothes: garment + color + fabric (say lace / knit / silk / denim explicitly)
+- marks: moles (where), lip piercings, earrings, glasses, tattoos — or `none`
 
-> Restyle into a Cube Escape / Rusty Lake still: full flat illustration with bold black outlines and limited shading; muted desaturated palette of greys, ochre, pale earth, and sickly green on wallpaper and props; pale ivory / light-peach skin (not grey-green); uncanny doll-like stillness; isolated subject. Analog puzzle-game frame. Not photoreal, not a photo-face collage.
+## Look-plate leak list (never copy these unless they are on the upload)
 
-Keep the upload's identity (the actual hair, clothes, face marks, or the actual object). Change medium and atmosphere, not who or what it is.
+From `avatar-look.jpg`: black hair, cream ribbed knit sweater, mole by the eye, lip piercing, rotary phone.
 
-Always pass `references/avatar-look.jpg` as a look reference for avatars. If the user also attached more style examples, those are look only too. The upload is identity (face shape, hair, moles, lip piercings, earrings). Do not copy a look-plate person's face or marks.
+From `avatar-look-b.jpg`: brown hair, purple flower, white lace blouse.
 
-## Avatar prompt
+If the upload does not have it, it must not appear.
 
-Use with image-edit / image-to-image when a portrait photo is the source. Paste, then fill only the identity clause from the upload:
+## One-shot avatar prompt
 
-> Restyle the person in the first image into a Cube Escape / Rusty Lake 头像. Match the second image (look plate) only for how to draw brows, eyes, and lips: thin arched brows, large half-lidded almond eyes with simple upper lashes, short line nose, small peach-pink closed mouth, bold black outlines, flat cel fills, ivory/peach skin, damask wallpaper. Keep identity from the first photo: face shape, hair cut/length/bangs/color, clothes, and face marks (moles, lip piercings, earrings — same count and place; if the photo has none, draw none). Do not copy the look plate's mole, lip piercing, glasses, or jewelry. Isolated bust, facing the viewer, stiff, uncanny doll-like stillness. Square-friendly framing, one subject, no cinematic landscape.
+Make **one** image-edit / image-to-image call. Order: upload, then `avatar-look.jpg`, then `avatar-look-b.jpg`. Do not generate extra variants to pick from.
+
+Fill the `{…}` slots from the identity inventory:
+
+> Restyle the person in the first image into a Cube Escape / Rusty Lake 头像. Images 2 and 3 are look plates of two different people with the same drawing language — copy only that language: bold even black outlines, flat cel fills, thin arched brows, large half-lidded almond eyes with simple upper lashes, short line nose, small peach-pink closed mouth, ivory/peach skin, muted olive damask wallpaper, isolated front-facing bust, uncanny doll-like stillness. Identity from image 1 only: face shape {face}; hair {hair}; clothes {clothes}; face marks {marks}. Do not copy hair, clothes, knit sweater, lace blouse, flower, mole, lip piercing, glasses, jewelry, or rotary phone from the look plates unless that exact thing is on image 1. No cinematic leftover from the photo (no cherry blossoms, beach, sky, hand-on-face pose). Square-friendly framing, one subject.
 
 ## Item prompt
 

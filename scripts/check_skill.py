@@ -237,6 +237,10 @@ def validate(
             errors.append(
                 "avatar workflow must keep moles/piercings/earrings from the upload, not the look plate"
             )
+        if not _has_any(avatar, ("identity inventory", "one-shot", "one image-edit")):
+            errors.append(
+                "avatar workflow must fill an identity inventory and make one image-edit call"
+            )
 
     item = sections.get("item", "")
     if not item.strip():
@@ -296,6 +300,10 @@ def validate(
         )
     if not _has_any(corpus, ("avatar-look", "look plate")):
         errors.append("style recipe must name the avatar look plate")
+    if not _has_any(corpus, ("identity inventory", "one-shot")):
+        errors.append("style recipe must require an identity inventory and a one-shot prompt")
+    if not _has_any(corpus, ("avatar-look-b",)):
+        errors.append("style recipe must name the second look plate avatar-look-b")
     if re.search(r"rusty lake style", style_haystack) and not (
         "low-fi" in style_haystack or "outline" in style_haystack
     ):
@@ -338,6 +346,10 @@ def check_repo(root: Path) -> list[str]:
         root / "references" / "avatar-look.jpg"
     ).is_file():
         errors.append("SKILL.md points at references/avatar-look.jpg but the file is missing")
+    if "references/avatar-look-b.jpg" in pointed and not (
+        root / "references" / "avatar-look-b.jpg"
+    ).is_file():
+        errors.append("SKILL.md points at references/avatar-look-b.jpg but the file is missing")
     return errors
 
 

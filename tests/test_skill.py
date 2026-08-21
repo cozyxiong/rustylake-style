@@ -103,7 +103,8 @@ class TestShippedValidator(unittest.TestCase):
                 "flat low-fi muted desaturated greys ochre pale earth "
                 "sickly green doll-like simplified geometric face isolated "
                 "bold black outlines flat cel fills damask wallpaper "
-                "moles piercings from the upload"
+                "moles piercings from the upload identity inventory one-shot "
+                "avatar-look-b look plate"
             )
         }
         errors = check_skill.validate(_ok_frontmatter(), body, refs)
@@ -115,14 +116,16 @@ class TestShippedValidator(unittest.TestCase):
             "If no photo, ask for an upload and stop; do not invent a face. "
             "Restyle the likeness with image-edit / image-to-image. "
             "Keep identity as a full illustration. Face marks follow the "
-            "upload: moles and piercings from the photo only.\n"
+            "upload: moles and piercings from the photo only. "
+            "Fill the identity inventory and make one image-edit call.\n"
         )
         refs = {
             "references/style.md": (
                 "flat low-fi muted desaturated greys ochre pale earth "
                 "sickly green doll-like simplified geometric face isolated "
                 "bold black outlines flat cel fills damask wallpaper "
-                "moles piercings from the upload"
+                "moles piercings from the upload identity inventory one-shot "
+                "avatar-look-b look plate"
             )
         }
         errors = check_skill.validate(_ok_frontmatter(), body, refs)
@@ -148,7 +151,8 @@ class TestShippedValidator(unittest.TestCase):
             "## Avatar\n"
             "If no photo, ask for an upload and stop. "
             "Use image-edit on the likeness. Keep identity as a full illustration. "
-            "Face marks follow the upload: moles and piercings from the photo only.\n"
+            "Face marks follow the upload: moles and piercings from the photo only. "
+            "Fill the identity inventory and make one image-edit call.\n"
             "## Item\n"
             "Use image-edit. Isolated inventory object on a plain pale ground. "
             "Head-and-shoulders bust likeness.\n"
@@ -158,7 +162,8 @@ class TestShippedValidator(unittest.TestCase):
                 "flat low-fi muted desaturated greys ochre pale earth "
                 "sickly green doll-like simplified geometric face isolated "
                 "bold black outlines flat cel fills damask wallpaper "
-                "moles piercings from the upload"
+                "moles piercings from the upload identity inventory one-shot "
+                "avatar-look-b look plate"
             )
         }
         errors = check_skill.validate(_ok_frontmatter(), body, refs)
