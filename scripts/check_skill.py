@@ -241,6 +241,14 @@ def validate(
             errors.append(
                 "avatar workflow must fill an identity inventory and make one image-edit call"
             )
+        if not _has_any(avatar, ("neckline", "collar", "hair silhouette")):
+            errors.append(
+                "avatar workflow must rebuild hair silhouette and clothes neckline from the upload"
+            )
+        if not _has_any(avatar, ("face crop", "look-face", "avatar-look-face")):
+            errors.append(
+                "avatar workflow must pass face-crop look plates, not full busts"
+            )
 
     item = sections.get("item", "")
     if not item.strip():
@@ -304,6 +312,10 @@ def validate(
         errors.append("style recipe must require an identity inventory and a one-shot prompt")
     if not _has_any(corpus, ("avatar-look-b",)):
         errors.append("style recipe must name the second look plate avatar-look-b")
+    if not _has_any(corpus, ("avatar-look-face", "face crop")):
+        errors.append("style recipe must use face-crop look plates for image-edit")
+    if not _has_any(corpus, ("neckline", "crew-neck", "collar")):
+        errors.append("style recipe must rebuild garment neckline from the upload")
     if re.search(r"rusty lake style", style_haystack) and not (
         "low-fi" in style_haystack or "outline" in style_haystack
     ):
@@ -342,14 +354,14 @@ def check_repo(root: Path) -> list[str]:
     loaded_refs = load_skill(root)[2]
     if "references/style.md" in pointed and "references/style.md" not in loaded_refs:
         errors.append("SKILL.md points at references/style.md but the file is missing")
-    if "references/avatar-look.jpg" in pointed and not (
-        root / "references" / "avatar-look.jpg"
-    ).is_file():
-        errors.append("SKILL.md points at references/avatar-look.jpg but the file is missing")
-    if "references/avatar-look-b.jpg" in pointed and not (
-        root / "references" / "avatar-look-b.jpg"
-    ).is_file():
-        errors.append("SKILL.md points at references/avatar-look-b.jpg but the file is missing")
+    for rel in (
+        "references/avatar-look.jpg",
+        "references/avatar-look-b.jpg",
+        "references/avatar-look-face.jpg",
+        "references/avatar-look-b-face.jpg",
+    ):
+        if rel in pointed and not (root / rel).is_file():
+            errors.append(f"SKILL.md points at {rel} but the file is missing")
     return errors
 
 

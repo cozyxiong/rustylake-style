@@ -104,7 +104,7 @@ class TestShippedValidator(unittest.TestCase):
                 "sickly green doll-like simplified geometric face isolated "
                 "bold black outlines flat cel fills damask wallpaper "
                 "moles piercings from the upload identity inventory one-shot "
-                "avatar-look-b look plate"
+                "avatar-look-b look plate avatar-look-face neckline collar"
             )
         }
         errors = check_skill.validate(_ok_frontmatter(), body, refs)
@@ -117,7 +117,8 @@ class TestShippedValidator(unittest.TestCase):
             "Restyle the likeness with image-edit / image-to-image. "
             "Keep identity as a full illustration. Face marks follow the "
             "upload: moles and piercings from the photo only. "
-            "Fill the identity inventory and make one image-edit call.\n"
+            "Fill the identity inventory and make one image-edit call. "
+            "Rebuild hair silhouette and clothes neckline. Pass face-crop look plates.\n"
         )
         refs = {
             "references/style.md": (
@@ -125,7 +126,7 @@ class TestShippedValidator(unittest.TestCase):
                 "sickly green doll-like simplified geometric face isolated "
                 "bold black outlines flat cel fills damask wallpaper "
                 "moles piercings from the upload identity inventory one-shot "
-                "avatar-look-b look plate"
+                "avatar-look-b look plate avatar-look-face neckline collar"
             )
         }
         errors = check_skill.validate(_ok_frontmatter(), body, refs)
@@ -152,7 +153,8 @@ class TestShippedValidator(unittest.TestCase):
             "If no photo, ask for an upload and stop. "
             "Use image-edit on the likeness. Keep identity as a full illustration. "
             "Face marks follow the upload: moles and piercings from the photo only. "
-            "Fill the identity inventory and make one image-edit call.\n"
+            "Fill the identity inventory and make one image-edit call. "
+            "Rebuild hair silhouette and clothes neckline. Pass face-crop look plates.\n"
             "## Item\n"
             "Use image-edit. Isolated inventory object on a plain pale ground. "
             "Head-and-shoulders bust likeness.\n"
@@ -163,7 +165,7 @@ class TestShippedValidator(unittest.TestCase):
                 "sickly green doll-like simplified geometric face isolated "
                 "bold black outlines flat cel fills damask wallpaper "
                 "moles piercings from the upload identity inventory one-shot "
-                "avatar-look-b look plate"
+                "avatar-look-b look plate avatar-look-face neckline collar"
             )
         }
         errors = check_skill.validate(_ok_frontmatter(), body, refs)

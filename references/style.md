@@ -16,49 +16,57 @@ Isolated subject. One person or one object owns the frame. No crowd, no busy tab
 
 ## Face (avatars)
 
-Look plates (drawing language only — two different people, same hand):
+Image-edit look plates are **face crops only** (brows, eyes, nose, mouth). Never pass the full bust files `avatar-look.jpg` / `avatar-look-b.jpg` into the image tool — those busts share a blunt hair mass and a round ribbed crew collar, and the model will reuse them as a template.
 
-- `references/avatar-look.jpg`
-- `references/avatar-look-b.jpg`
+Pass both:
 
-Always pass **both** as extra image-edit references so the model sees that hair, clothes, and marks change while brows/eyes/lips stay the same. They are not the identity.
+- `references/avatar-look-face.jpg`
+- `references/avatar-look-b-face.jpg`
 
-Simplified geometric face, drawn like those plates:
+Copy **only** how brows, eyes, and lips are inked. Ignore hair in those crops. They contain no garment — do not invent a sweater from them.
+
+Simplified geometric face:
 
 - eyebrows: thin simple arches, a few short strokes
 - eyes: large almond, half-lidded, a row of simple upper lashes, pale grey-green iris
 - nose: a short angular line
 - lips: small closed peach-pink mouth, two simple shapes
-- hair *rendering*: solid outlined mass with parallel internal strand lines — cut, length, bangs, and color come from the upload
-- clothes *rendering*: graphic outlined garment with fabric named from the upload (lace stays lace, knit stays knit)
-- face *shape*, moles, lip piercings, earrings, and other marks come from the upload
 
-Front-facing bust, head-and-shoulders, stiff posture. Background is a repeating **damask or floral wallpaper** in muted olive / grey-green. Do not copy a look plate's rotary phone or side table unless the upload has a similar prop. Not a sunset, beach, mountain, cherry blossom, or fashion-illustration postcard.
+Hair and clothes are **new drawings from the upload**, not edits of a look-plate silhouette:
+
+- Rebuild the hair mass from the upload's outline: part, bangs type, wave, length, volume. Do not paste the look-plate blunt straight hair block and recolor it.
+- Rebuild the garment from the upload's construction: neckline, collar, sleeves, fabric. Do not keep a round ribbed crew-neck outline and swap the fill. If the upload is a fuzzy funnel, lace blouse, V-neck, or open collar, the black outline of the neck must match that, not the look-plate sweater.
+
+Face *shape*, moles, lip piercings, earrings come from the upload.
+
+Front-facing bust, head-and-shoulders, stiff. Background: repeating damask or floral wallpaper in muted olive / grey-green. No look-plate rotary phone unless the upload has one. No cinematic leftover (sunset, beach, cherry blossom, wisteria, sky).
 
 ## Identity inventory (fill this before the one image-edit call)
 
 Write these lines from the **upload**, then paste them into the prompt. Do not skip.
 
 - face shape:
-- hair: color, length, bangs, up/down, accessories (flower, clip, …)
-- clothes: garment + color + fabric (say lace / knit / silk / denim explicitly)
+- hair silhouette: color; length vs shoulders; part; bangs (blunt / curtain / side-swept / none); wave (straight / wavy / curly); volume; accessories
+- clothes construction: garment; color; fabric (lace / knit / fuzzy / silk / denim); **neckline** (crew / V / funnel / lace collar / off-shoulder / fuzzy high neck / other); collar yes/no; sleeves
 - marks: moles (where), lip piercings, earrings, glasses, tattoos — or `none`
 
-## Look-plate leak list (never copy these unless they are on the upload)
+## Look-plate leak list (never copy unless on the upload)
 
-From `avatar-look.jpg`: black hair, cream ribbed knit sweater, mole by the eye, lip piercing, rotary phone.
+Do not pass full bust look plates into the image tool.
 
-From `avatar-look-b.jpg`: brown hair, purple flower, white lace blouse.
+Shared fake template (NOT the look): blunt straight hair block, round ribbed crew-neck collar.
 
-If the upload does not have it, it must not appear.
+From the old busts: black hair, cream ribbed knit, mole by the eye, lip piercing, rotary phone, brown hair, purple flower, white lace blouse — only if the upload actually has that exact thing.
 
 ## One-shot avatar prompt
 
-Make **one** image-edit / image-to-image call. Order: upload, then `avatar-look.jpg`, then `avatar-look-b.jpg`. Do not generate extra variants to pick from.
+Make **one** image-edit / image-to-image call. Order: upload, then `avatar-look-face.jpg`, then `avatar-look-b-face.jpg`. Do not generate extra variants to pick from.
 
 Fill the `{…}` slots from the identity inventory:
 
-> Restyle the person in the first image into a Cube Escape / Rusty Lake 头像. Images 2 and 3 are look plates of two different people with the same drawing language — copy only that language: bold even black outlines, flat cel fills, thin arched brows, large half-lidded almond eyes with simple upper lashes, short line nose, small peach-pink closed mouth, ivory/peach skin, muted olive damask wallpaper, isolated front-facing bust, uncanny doll-like stillness. Identity from image 1 only: face shape {face}; hair {hair}; clothes {clothes}; face marks {marks}. Do not copy hair, clothes, knit sweater, lace blouse, flower, mole, lip piercing, glasses, jewelry, or rotary phone from the look plates unless that exact thing is on image 1. No cinematic leftover from the photo (no cherry blossoms, beach, sky, hand-on-face pose). Square-friendly framing, one subject.
+> Restyle the person in the first image into a Cube Escape / Rusty Lake 头像. Image 1 is the only source for hair and clothing geometry. Images 2 and 3 are tight face crops — copy only how brows, eyes, and lips are drawn (thin arched brows, large half-lidded almond eyes with simple upper lashes, short line nose, small peach-pink closed mouth). Ignore hair in those crops. They have no clothes; do not reuse a round ribbed crew-neck sweater. Rebuild a NEW hair mass from image 1: {hair}. Rebuild a NEW garment from image 1: {clothes}, neckline {neckline} — new collar outline, not a recolored look-plate sweater. Identity also: face shape {face}; face marks {marks}. Bold even black outlines, flat cel fills, ivory/peach skin, muted olive damask wallpaper, isolated front-facing bust, uncanny doll-like stillness. No mole, lip piercing, flower, glasses, or rotary phone unless listed in marks / hair / clothes from image 1. No cinematic leftover (wisteria, cherry blossoms, beach, sky, hand pose). Square-friendly framing, one subject.
+
+After the image returns, check: (1) hair silhouette matches the upload, not the face-crop bangs; (2) neckline/collar matches the upload, with no leftover look-plate crew-neck ring. If either failed, that is look-plate identity leak — one retry from the original upload.
 
 ## Item prompt
 
