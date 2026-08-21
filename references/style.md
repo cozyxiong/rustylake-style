@@ -23,6 +23,8 @@ Simplified geometric face:
 - small closed mouth, flat or a slight frown
 - hair as a solid graphic mass with a thick outline and a few internal strand lines; bangs as shapes
 
+Face marks (moles, beauty marks, piercings, scars, glasses, tattoos) come **only from the upload**. Before prompting, list them and their positions from the photo. Keep those. If the upload has none, draw none. Style examples must not donate a mole, lip piercing, glasses-on-head, or other jewelry.
+
 Front-facing bust, head-and-shoulders, stiff posture. Background is a repeating **damask or floral wallpaper** in muted olive / grey-green. At most one quiet analog prop (rotary phone, side table). Not a sunset, beach, mountain, or fashion-illustration postcard.
 
 ## Prompt atoms (use these words)
@@ -31,15 +33,15 @@ When writing the image-edit prompt, include this block (adapt only the subject c
 
 > Restyle into a Cube Escape / Rusty Lake still: full flat illustration with bold black outlines and limited shading; muted desaturated palette of greys, ochre, pale earth, and sickly green on wallpaper and props; pale ivory / light-peach skin (not grey-green); uncanny doll-like stillness; isolated subject. Analog puzzle-game frame. Not photoreal, not a photo-face collage.
 
-Keep the upload's identity (the actual hair, clothes, marks, or the actual object). Change medium and atmosphere, not who or what it is.
+Keep the upload's identity (the actual hair, clothes, face marks, or the actual object). Change medium and atmosphere, not who or what it is.
 
-If the user also attached **style examples**, pass them as extra image-edit references. The upload is identity; the examples are look only. Do not copy an example person's face.
+If the user also attached **style examples**, pass them as extra image-edit references. The upload is identity; the examples are look only (outlines, palette, wallpaper, eye geometry, skin *tone*). Do not copy an example person's face, moles, piercings, glasses, or other marks.
 
 ## Avatar prompt
 
 Use with image-edit / image-to-image when a portrait photo is the source. Paste, then fill only the identity clause from the upload:
 
-> Restyle this portrait into a Cube Escape / Rusty Lake 头像 — a full illustration, not a photograph and not a photo face on a cartoon body. Keep this person's likeness: same hair, age presentation, clothes, and distinguishing marks, translated into graphic shapes. Isolated bust, head-and-shoulders, facing the viewer, stiff. Simplified geometric face: large half-lidded staring eyes, short line nose, small closed mouth. Skin is pale ivory / light peach with a hint of pink — not grey, not olive, not green; do not stain the face with the wallpaper. Hair as a solid outlined mass with simple internal strands. Bold even black outlines, flat cel fills, limited shading. Repeating damask or floral wallpaper in muted olive/grey-green. Uncanny doll-like stillness. Muted desaturated palette of dusty greys, ochre, pale earth, and sickly green on the room only. Square-friendly framing, one subject, no crowd, no cinematic landscape.
+> Restyle this portrait into a Cube Escape / Rusty Lake 头像 — a full illustration, not a photograph and not a photo face on a cartoon body. Keep this person's likeness: same hair, age presentation, clothes, and face marks from this photo only (moles, piercings, scars, glasses — same count and place; if the photo has none, draw none). Do not copy moles, lip piercings, or glasses from a style example. Isolated bust, head-and-shoulders, facing the viewer, stiff. Simplified geometric face: large half-lidded staring eyes, short line nose, small closed mouth. Skin is pale ivory / light peach with a hint of pink — not grey, not olive, not green; do not stain the face with the wallpaper. Hair as a solid outlined mass with simple internal strands. Bold even black outlines, flat cel fills, limited shading. Repeating damask or floral wallpaper in muted olive/grey-green. Uncanny doll-like stillness. Muted desaturated palette of dusty greys, ochre, pale earth, and sickly green on the room only. Square-friendly framing, one subject, no crowd, no cinematic landscape.
 
 ## Item prompt
 

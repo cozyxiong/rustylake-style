@@ -227,6 +227,10 @@ def validate(
             ),
         ):
             errors.append("avatar workflow must keep likeness as a full illustration")
+        if not _has_any(avatar, ("mole", "piercing", "face mark", "marks follow")):
+            errors.append(
+                "avatar workflow must keep moles/piercings from the upload, not style examples"
+            )
 
     item = sections.get("item", "")
     if not item.strip():
@@ -280,6 +284,10 @@ def validate(
         )
     if not _has_any(corpus, ("wallpaper", "damask")):
         errors.append("style recipe must state damask/floral wallpaper for avatars")
+    if not _has_any(corpus, ("mole", "piercing")):
+        errors.append(
+            "style recipe must keep moles/piercings from the upload, not from style examples"
+        )
     if re.search(r"rusty lake style", style_haystack) and not (
         "low-fi" in style_haystack or "outline" in style_haystack
     ):

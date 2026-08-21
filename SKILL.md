@@ -35,10 +35,10 @@ Follow this path when the upload is a portrait, selfie, face, 头像, or avatar.
 
 1. If no portrait image is attached, ask for an upload. Stop. Do not invent a face.
 2. Restyle **that** likeness with the host **image-edit / image-to-image** tool. Pass the user photo as the source. Do not use text-to-image for a likeness.
-3. Keep identity: age presentation, face structure, hair, skin tone, distinguishing marks. Change medium, not person.
+3. Keep identity: age presentation, face structure, hair, skin tone. **Face marks follow the upload only:** list moles, piercings, scars, glasses, tattoos and their positions from the photo, then keep them. If the photo has none, draw none. Change medium, not person.
 4. Use the **avatar prompt** in [`references/style.md`](references/style.md). Full illustration with bold black outlines and flat cel fills — not a photoreal face, not a photo fragment on an illustrated body. Isolated bust; damask/floral wallpaper; simplified geometric face; uncanny doll-like stillness.
-5. If the user also attached style examples of the desired look, pass them as extra image-edit references. The upload is identity; the examples are look only. Do not copy an example person's face.
-6. If the result drifted (wrong person, leftover photoreal face, neon, busy cinematic scene), edit again from the **original upload**, not from the failed output.
+5. If the user also attached style examples of the desired look, pass them as extra image-edit references. The upload is identity; the examples are look only (outlines, palette, wallpaper, eye geometry, skin tone). Do not copy an example person's moles, piercings, glasses, or other face marks.
+6. If the result drifted (wrong person, leftover photoreal face, marks copied from a style example, upload marks dropped, neon, busy cinematic scene), edit again from the **original upload**, not from the failed output.
 
 ## Item
 
