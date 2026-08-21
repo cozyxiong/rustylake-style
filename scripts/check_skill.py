@@ -102,6 +102,9 @@ def referenced_relpaths(body: str) -> list[str]:
     return found
 
 
+_TEXT_REF_SUFFIXES = {".md", ".txt", ".json", ".yml", ".yaml"}
+
+
 def collect_referenced_files(body: str, root: Path) -> dict[str, str]:
     refs: dict[str, str] = {}
     root = root.resolve()
@@ -112,7 +115,10 @@ def collect_referenced_files(body: str, root: Path) -> dict[str, str]:
         except ValueError:
             continue
         if path.is_file():
-            refs[rel] = path.read_text(encoding="utf-8")
+            if path.suffix.lower() in _TEXT_REF_SUFFIXES:
+                refs[rel] = path.read_text(encoding="utf-8")
+            else:
+                refs[rel] = ""
     return refs
 
 
@@ -227,9 +233,9 @@ def validate(
             ),
         ):
             errors.append("avatar workflow must keep likeness as a full illustration")
-        if not _has_any(avatar, ("mole", "piercing", "face mark", "marks follow")):
+        if not _has_any(avatar, ("mole", "piercing", "earring", "face mark", "marks follow")):
             errors.append(
-                "avatar workflow must keep moles/piercings from the upload, not style examples"
+                "avatar workflow must keep moles/piercings/earrings from the upload, not the look plate"
             )
 
     item = sections.get("item", "")
@@ -288,6 +294,8 @@ def validate(
         errors.append(
             "style recipe must keep moles/piercings from the upload, not from style examples"
         )
+    if not _has_any(corpus, ("avatar-look", "look plate")):
+        errors.append("style recipe must name the avatar look plate")
     if re.search(r"rusty lake style", style_haystack) and not (
         "low-fi" in style_haystack or "outline" in style_haystack
     ):
@@ -323,10 +331,13 @@ def check_repo(root: Path) -> list[str]:
     errors.extend(validate(fm, body, refs))
     errors.extend(validate_readme(root))
     pointed = referenced_relpaths(body)
-    if "references/style.md" in pointed and "references/style.md" not in (
-        load_skill(root)[2]
-    ):
+    loaded_refs = load_skill(root)[2]
+    if "references/style.md" in pointed and "references/style.md" not in loaded_refs:
         errors.append("SKILL.md points at references/style.md but the file is missing")
+    if "references/avatar-look.jpg" in pointed and not (
+        root / "references" / "avatar-look.jpg"
+    ).is_file():
+        errors.append("SKILL.md points at references/avatar-look.jpg but the file is missing")
     return errors
 
 
