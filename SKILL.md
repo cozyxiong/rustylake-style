@@ -11,6 +11,10 @@ description: >
 
 Restyle a **user-uploaded** photo into Cube Escape / Rusty Lake illustration. Do not invent a face or object.
 
+## Load the look
+
+Read [`references/style.md`](references/style.md) before writing any prompt. That file is the only style source. Put its look into every image-edit prompt; do not substitute a vague "Rusty Lake style" line.
+
 ## Require an upload
 
 If the user did not attach an image, ask them to upload a portrait (头像) or object photo (物品). Stop. Do not call text-to-image to invent a likeness.
